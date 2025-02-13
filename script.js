@@ -29,3 +29,26 @@ function appendOperator(op) {
         operator = op;
     }
 }
+function calculateResult() {
+    let result;
+    switch (operator) {
+        case '+':
+            result = parseFloat(previousNumber) + parseFloat(currentNumber);
+            break;
+        case '-':
+            result = parseFloat(previousNumber) - parseFloat(currentNumber);
+            break;
+        case '*':
+            result = parseFloat(previousNumber) * parseFloat(currentNumber);
+            break;
+        case '/':
+            result = parseFloat(previousNumber) / parseFloat(currentNumber);
+            break;
+        default:
+            result = 0;
+    }
+    display.value = result;
+    currentNumber = result.toString();
+    previousNumber = '';
+    operator = '';
+}
